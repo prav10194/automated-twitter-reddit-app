@@ -1,5 +1,19 @@
 # automated-twitter-reddit-app
 
+For my own learning, wanted to create a positive twitter feed filled with images taken from various subreddits. Not using it for any monetary gain or profits. (Also need help with the README or probably optimizing the code. Feel free to fork and send in PR.)
+
+## Create Reddit App 
+
+1. Go to https://www.reddit.com/prefs/apps
+
+2. At the bottom of the page you will see a button - "Create another app"
+
+![Twitter screenshot](https://github.com/prav10194/automated-twitter-reddit-app/blob/master/assets/s5.png)
+
+3. Fill out the following when creating the new app - (be sure to select script in the radio button)
+
+![Twitter screenshot](https://github.com/prav10194/automated-twitter-reddit-app/blob/master/assets/s6.png)
+
 ## Create Twitter App
 
 1. Go to developer.twitter.com and apply for a new app - fill out the relevant information in the application. Mine took a few hours to approve. 
