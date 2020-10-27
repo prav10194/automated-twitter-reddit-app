@@ -34,7 +34,6 @@ def home_view():
 
 @app.route("/postreddit") 
 def post_reddit():
-    print("VAR:", os.environ.get('VAR'))
     if request.args.get('frensandfamilycode') == os.environ.get('SUPER_SECRET_TOKEN'):
         print("Access granted")
         subreddits_list = ["aww","earthporn","cattaps","tippytaps","masterreturns"]
