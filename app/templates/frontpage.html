@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='stylesheets/index.css') }}"
+    />
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/bootstrap.css') }}"> -->
+
+    <!-- <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:200" rel="stylesheet"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+  </head>
+  <body>
+    <div class="container" style="width: 50%">
+      <div
+        class="civilizationNameContainer"
+        style="font-size: 1.5rem; color: dimgrey"
+      >
+        Just supposed to be a pretty face to a heroku backend!
+        <br />
+        <br />
+        <br />
+        <br />
+        <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+          <a style="margin-right: 2rem;" href="https://github.com/prav10194/automated-twitter-reddit-app"
+            ><i class="fa fa-github fa_custom fa-2x"></i
+          ></a>
+          <a
+            href="https://twitter.com/intent/tweet?screen_name=smolboopsnootie&ref_src=twsrc%5Etfw"
+            class="twitter-mention-button"
+            data-lang="en"
+            data-show-count="false"
+            >Tweet to @smolboopsnootie</a
+          >
+          <script
+            async
+            src="https://platform.twitter.com/widgets.js"
+            charset="utf-8"
+          ></script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+body {
+    background: #e3e3e3
+}
+
+.container {
+    background: white;
+    border-radius: 1.5vw;
+    border: 1px solid #808080;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin-top: 10%;
+}
+
+.aoelogoDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aoelogo {
+    height: 10vw;
+    width: 17vw;
+}
+
+.civilizationNameContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 4vw;
+}
+
+.civilizationNameContainer div:not(:first-child) {
+    margin-top: 2vw;
+}
+.civilizationNameButton {
+    background-color: #393939;
+    font-size: 1.5vw;
+    color: #FFF;
+    width: 30%;
+    padding: 1vw;
+    cursor: pointer;
+    font-family: 'IBM Plex Sans', sans-serif;
+    opacity: 0.6;
+}
+
+.civilizationNameButton:hover {
+    opacity: 1;
+}
+
+.civilizationNameInput {
+    height: 4vw;
+    font-size: 2vw;
+    width: 50vw;
+    text-align: center;
+    border: 0;
+    border-bottom: 1px solid black;
+    background-color: #F0F0F0;
+    color: #585858;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+input:focus {
+    outline: none;
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+.civilizationDescription {
+    height: fit-content;
+    width: 50vw;
+    background-color: #F0F0F0;
+    font-size: 2vw;
+    overflow: scroll;
+}
+
+.question {
+    color: blue;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
