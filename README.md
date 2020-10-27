@@ -48,6 +48,26 @@ For my own learning, wanted to create a positive twitter feed filled with images
 
 **SUPER_SECRET_TOKEN** can be any keyword but you need to send in the same keyword while calling your get post reddit request. 
 
+## Uploading the app on Heroku
+
+Follow the steps to install heroku cli - https://devcenter.heroku.com/articles/heroku-cli
+
+1. In the cmd/terminal after cloning the repo - (in case you have a git folder already in there do a **rm -r .git**)
+
+```cmd
+git init
+git add .
+git commit -m "added files"
+heroku create
+git push heroku master
+heroku ps:scale web=1
+```
+Check logs using the following command - 
+
+```cmd
+heroku logs --tail
+```
+
 ## Fixing ffmpeg for heroku
 
 You need to follow this for fixing in-case you are having issues while downloading videos from reddit using youtube-dl - https://elements.heroku.com/buildpacks/jonathanong/heroku-buildpack-ffmpeg-latest
