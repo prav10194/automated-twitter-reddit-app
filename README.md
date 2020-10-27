@@ -24,3 +24,6 @@
 ## Fixing ffmpeg for heroku
 
 You need to follow this for fixing in-case you are having issues while downloading videos from reddit using youtube-dl - https://elements.heroku.com/buildpacks/jonathanong/heroku-buildpack-ffmpeg-latest
+
+## Postman screenshot on how the API looks like
+
