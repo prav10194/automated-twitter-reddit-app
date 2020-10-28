@@ -54,6 +54,8 @@ Follow the steps to install heroku cli - https://devcenter.heroku.com/articles/h
 
 1. In the cmd/terminal after cloning the repo - (in case you have a git folder already in there do a **rm -r .git**)
 
+Note: Don't push the .env file
+
 ```cmd
 git init
 git add .
@@ -62,6 +64,13 @@ heroku create
 git push heroku master
 heroku ps:scale web=1
 ```
+
+To configure environment variables - 
+
+```cmd
+heroku config:set $(cat <PATH>/.env | sed '/^$/d; /#[[:print:]]*$/d')
+```
+
 Check logs using the following command - 
 
 ```cmd
