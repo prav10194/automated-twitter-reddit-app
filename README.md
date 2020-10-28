@@ -75,3 +75,5 @@ You need to follow this for fixing in-case you are having issues while downloadi
 ## Postman screenshot on how the API looks like
 
 ![Postman screenshot](https://github.com/prav10194/automated-twitter-reddit-app/blob/master/assets/s1.png)
+
+## Needs to add a external storage for persistent data
