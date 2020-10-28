@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 from flask import Flask, render_template, request
 from flask_cors import CORS, cross_origin
 import requests
+import dropbox
 
 app = Flask(__name__) 
 cors = CORS(app)
@@ -14,6 +15,7 @@ import random
 import time
 import os
 
+dbx = dropbox.Dropbox(os.environ.get('DROPBOX_ACCESS_TOKEN'))
 
 reddit = praw.Reddit(
  client_id=os.environ.get('REDDIT_CLIENT_ID'),
@@ -34,17 +36,24 @@ def home_view():
 
 @app.route("/postreddit") 
 def post_reddit():
+    
+    os.remove('./ids')
+    dbx.files_download_to_file("./ids", '/Reddit-Twitter/ids')
+    
+    print("VAR:", os.environ.get('VAR'))
     if request.args.get('frensandfamilycode') == os.environ.get('SUPER_SECRET_TOKEN'):
         print("Access granted")
-        subreddits_list = ["aww","earthporn","cattaps","tippytaps","masterreturns"]
+        subreddits_list = ["aww","earthporn","cattaps","tippytaps","masterreturns","dogpictures","RarePuppers","DogsWithJobs"]
         random_subbreddit = random.choice(subreddits_list)
-        print(random_subbreddit)
+        subreddit = reddit.subreddit(random_subbreddit)
 
-        subreddit = reddit.subreddit(random_subbreddit) 
+        time_filters_counts = ["year:100", "month:20", "week:5"]
+        time_filter_count = random.choice(time_filters_counts)
+ 
         alreadyPosted = False
         reddit_post = {"url": "", "id": "", "title": "", "postlink": ""}
 
-        for submission in subreddit.top(time_filter="year",limit=100):
+        for submission in subreddit.top(time_filter=time_filter_count.split(":")[0],limit=int(time_filter_count.split(":")[1])):
                 try:
                         readfile = open("ids", "r")
                         isUnique = submission.id not in readfile.read()
@@ -96,4 +105,7 @@ def post_reddit():
                         response = twitter.upload_video(media=video, media_category='tweet_video', media_type='video/mp4', check_progress=True)
                         twitter.update_status(status=tweet, media_ids=[response['media_id']])
                         os.remove(reddit_post["id"] + '.mp4')
+        dbx.files_delete_v2('/Reddit-Twitter/ids', parent_rev=None)
+        with open("./ids", "rb") as f:
+                dbx.files_upload(f.read(), '/Reddit-Twitter/ids', mute = True)
         return {"message": "Posted successfully"}
