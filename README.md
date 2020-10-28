@@ -28,6 +28,17 @@ For my own learning, wanted to create a positive twitter feed filled with images
 
 ![Twitter screenshot](https://github.com/prav10194/automated-twitter-reddit-app/blob/master/assets/s4.png)
 
+
+## Needs to add a external storage for persistent data - as Heroku doesn't provide it 
+
+1. Follow steps to add a dropbox app - https://www.dropbox.com/developers/documentation/python
+
+2. Create a folder structure /Twitter-Reddit/ and add a file ids in there
+
+![Dropbox screenshot](https://github.com/prav10194/automated-twitter-reddit-app/blob/master/assets/s7.png)
+
+2. Update the variable in .env file
+
 ## Add .env variables
 
 **REDDIT_CLIENT_ID and REDDIT_CLIENT_SECRET** you can find it in the section of setup reddit app.
@@ -47,6 +58,8 @@ For my own learning, wanted to create a positive twitter feed filled with images
 **TWITTER_OAUTH_TOKEN_SECRET** refer to section of Twitter app section
 
 **SUPER_SECRET_TOKEN** can be any keyword but you need to send in the same keyword while calling your get post reddit request. 
+
+**DROPBOX_ACCESS_TOKEN** Find access token in dropbox app console. Refer to section for setting up the dropbox app. 
 
 ## Uploading the app on Heroku
 
@@ -81,8 +94,5 @@ heroku logs --tail
 
 You need to follow this for fixing in-case you are having issues while downloading videos from reddit using youtube-dl - https://elements.heroku.com/buildpacks/jonathanong/heroku-buildpack-ffmpeg-latest
 
-## Postman screenshot on how the API looks like
-
+## Postman screenshot on how the API looks lik
 ![Postman screenshot](https://github.com/prav10194/automated-twitter-reddit-app/blob/master/assets/s1.png)
-
-## Needs to add a external storage for persistent data
